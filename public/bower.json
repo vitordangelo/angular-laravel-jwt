@@ -1,0 +1,24 @@
+{
+  "name": "public",
+  "authors": [
+    "Vitor <metroid.p2p@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.7",
+    "satellizer": "^0.15.5",
+    "angular": "^1.5.8"
+  }
+}

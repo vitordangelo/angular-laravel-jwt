@@ -1,0 +1,29 @@
+mysql:
+    image: mysql
+    container_name: database-angular-laravel-jwt
+    ports:
+        - 3306:3306
+    environment:
+        MYSQL_DATABASE: laravel
+        MYSQL_ROOT_PASSWORD: 123456
+
+php:
+    # image: php:fpm-alpine
+    image: ermacmk/php-fpm-pdo
+    container_name: php-angular-laravel-jwt
+    volumes:
+        - .:/var/www/laravel
+    entrypoint:
+        - php-fpm
+
+nginx:
+    image: nginx:alpine
+    container_name: nginx-angular-laravel-jwt
+    volumes_from:
+        - php
+    volumes:
+        - ./build/nginx.conf:/etc/nginx/conf.d/default.conf
+    links:
+        - php
+    ports:
+        - 80:80
